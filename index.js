@@ -25,7 +25,7 @@ client.on('message', msg => {
                 db.set(`users.${msg.member.user.id}`, channel).write();
                 msg.reply('MuteBot Started !');
             }else {
-                msg.reply("You need to be in a Voice Channel to Start Mute Bot")
+                msg.reply("You need to be in a Voice Channel to Start MuteBot !")
             }
         }
         if(msgContents[1] === "stop"){
