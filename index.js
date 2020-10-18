@@ -18,8 +18,12 @@ client.on('message', msg => {
     if (msgContents[0] === 'am'){
         if (msgContents[1] === 'start'){
             const channel = msg.member.voice.channel;
-            db.set(`users.${msg.member.user.id}`, channel).write();
-            msg.reply('MuteBot Started !');
+            if (channel){
+                db.set(`users.${msg.member.user.id}`, channel).write();
+                msg.reply('MuteBot Started !');
+            }else {
+                msg.reply("You need to be in a Voice Channel to Start Mute Bot")
+            }
         }
         if(msgContents[1] === "stop"){
             db.unset(`users.${msg.member.user.id}`).write();
