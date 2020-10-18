@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = 'am';
+const prefix = 'mb';
 const low = require('lowdb');
 
 const FileSync = require('lowdb/adapters/FileSync');
@@ -15,7 +15,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
     let msgContents = msg.content.split(" ");
-    if (msgContents[0] === 'am'){
+    if (msgContents[0] === prefix){
         if (msgContents[1] === 'start'){
             const channel = msg.member.voice.channel;
             if (channel){
