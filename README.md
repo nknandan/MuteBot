@@ -4,9 +4,11 @@ Discord Bot which toggles servermute for all users in a voice channel depending 
 
 -Commands-
 
-am start : start the bot.
+mb start : start the bot.
 
-am stop : stop the bot.
+mb stop : stop the bot.
+
+mb ping : check the bot status
 
 To invite the bot to your server go to : https://discord.com/api/oauth2/authorize?client_id=767363765636825109&permissions=47188992&scope=bot .
 
