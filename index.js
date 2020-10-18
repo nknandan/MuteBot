@@ -16,6 +16,9 @@ client.on('ready', () => {
 client.on('message', msg => {
     let msgContents = msg.content.split(" ");
     if (msgContents[0] === prefix){
+        if(msgContents[1] === "ping"){
+            msg.reply('Pong !');
+        }
         if (msgContents[1] === 'start'){
             const channel = msg.member.voice.channel;
             if (channel){
