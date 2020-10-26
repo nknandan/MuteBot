@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = 'mb';
+const prefix = '!mb';
 const low = require('lowdb');
 
 const FileSync = require('lowdb/adapters/FileSync');
@@ -8,6 +8,7 @@ const adapter = new FileSync('Database.json');
 const db = low(adapter);
 db.defaults({ users : {}})
     .write()
+
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -31,6 +32,17 @@ client.on('message', msg => {
         if(msgContents[1] === "stop"){
             db.unset(`users.${msg.member.user.id}`).write();
             msg.reply('MuteBot Stopped!');
+        }
+        if(msgContents[1] === "help"){
+            msg.reply({embed: {
+                    color: 3447003,
+                    title: "MuteBot !",
+                    fields: [
+                        { name: "!mb", value: "start\nstop", inline: true},
+                        { name: "Prefix", value: "start an instance of the bot.\nstop an instance of the bot.", inline: true}
+                    ]
+                }
+            });
         }
     }
 });
