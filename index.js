@@ -41,7 +41,7 @@ client.on('message', msg => {
                     color: 3447003,
                     title: "MuteBot !",
                     fields: [
-                        { name: "!mb", value: "start\nstop", inline: true},
+                        { name: `${prefix}`, value: "start\nstop", inline: true},
                         { name: "Prefix", value: "start an instance of the bot.\nstop an instance of the bot.", inline: true}
                     ]
                 }
